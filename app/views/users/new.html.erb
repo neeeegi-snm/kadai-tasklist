@@ -1,0 +1,30 @@
+<div class="text-center">
+  <h1>新規ユーザ登録</h1>    
+</div>
+
+<div>
+  <%= form_with(model: @user, local: true) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+    <div>
+      <%= f.label :name, 'ユーザ名' %>
+      <%= f.text_field :name %>      
+    </div>
+    
+    <div>
+      <%= f.label :email, 'メールアドレス' %>
+      <%= f.email_field :email %>    
+    </div>
+    
+    <div>
+      <%= f.label :password, 'パスワード' %>
+      <%= f.password_field :password %>      
+    </div>
+    
+    <div>
+      <%= f.label :password_confirmation, 'パスワード確認' %>
+      <%= f.password_field :password_confirmation %>      
+    </div>
+    
+    <%= f.submit '登録' %>
+  <% end %>
+</div>
